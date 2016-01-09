@@ -1,0 +1,49 @@
+{
+	"name": "webshop",
+	"private": true,
+	"main": "./src",
+	"scripts": {
+		"build": "npm run build:styles & npm run build:script & npm run build:markup",
+		"build:dev": "npm run build:styles:dev & npm run build:script:dev & npm run build:markup:dev",
+		"watch": "parallelshell 'npm run watch:styles' 'npm run watch:script' 'npm run watch:markup'",
+
+		"build:markup": "jade --no-debug src/*.jade -o ./dist",
+		"build:markup:dev": "jade --pretty src/*.jade -o ./dist",
+		"watch:markup": "jade --pretty -w src/*.jade -o ./dist",
+
+		"build:styles": "stylus --compress --use autoprefixer-stylus ./src -o ./dist",
+		"build:styles:dev": "stylus --use autoprefixer-stylus -m ./src -o ./dist",
+		"watch:styles": "stylus --use autoprefixer-stylus -w ./src -o ./dist",
+
+		"build:script": "browserify -g [ envify purge ] -g uglifyify ./ > ./dist/index.js",
+		"build:script:dev": "browserify -d -g envify ./ > ./dist/index.js",
+		"watch:script": "watchify -v -d -g envify ./ -o ./dist/index.js",
+
+		"serve": "http-server -p 80 ./dist",
+		"serve:dev": "http-server -p 8000 ./dist",
+
+		"dev": "parallelshell 'npm run watch' 'npm run serve:dev'",
+		"start": "npm run build && npm run serve"
+	},
+	"browserify": {
+		"transform": [ "brjade" ]
+	},
+	"dependencies": {
+		"amount-format": "^0.0.6",
+		"array-find": "^1.0.0",
+		"component-bind": "^1.0.0",
+		"jade": "^1.11.0"
+	},
+	"devDependencies": {
+		"autoprefixer-stylus": "*",
+		"brjade": "^0.0.4",
+		"browserify": "*",
+		"envify": "*",
+		"http-server": "*",
+		"jade": "*",
+		"parallelshell": "*",
+		"stylus": "*",
+		"uglifyify": "*",
+		"watchify": "*"
+	}
+}

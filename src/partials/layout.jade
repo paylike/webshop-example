@@ -1,0 +1,34 @@
+doctype
+html
+	head
+		title Artistic Maps
+		link(rel="stylesheet", href="./index.css")
+	body
+		header
+			a.logo(href="/")
+				img(src="/images/logo.svg")
+
+			div.basket.empty.closed
+				a(href="#", alt="Basket") Basket
+					span.count 0
+
+				div.popup
+
+		main
+			block main
+
+		footer
+			p Artistic Maps IVS, Kochsgade 34, 1, 5000 Odense C • +45 20 96 29 77 • CVR: 12345678
+			p
+				a(href="mailto:info@artisticmaps.com", alt="Contact us by email") info@artisticmaps.com
+
+				| &nbsp;•&nbsp;
+
+				a(href="/terms.html") Terms &amp; Conditions
+
+			div.payment-methods
+				img(src="/images/visa.svg", alt="Visa")
+				img(src="/images/mastercard.svg", alt="MasterCard")
+
+		script(src="https://sdk.paylike.io/2.js")
+		script(src="./index.js")
