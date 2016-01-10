@@ -31,18 +31,19 @@
 	"dependencies": {
 		"array-find": "^1.0.0",
 		"component-bind": "^1.0.0",
-		"jade": "^1.11.0"
-	},
-	"devDependencies": {
+		"jade": "^1.11.0",
+
 		"autoprefixer-stylus": "*",
 		"brjade": "^0.0.4",
 		"browserify": "*",
 		"envify": "*",
 		"http-server": "*",
 		"jade": "*",
-		"parallelshell": "*",
 		"stylus": "*",
-		"uglifyify": "*",
+		"uglifyify": "*"
+	},
+	"devDependencies": {
+		"parallelshell": "*",
 		"watchify": "*"
 	}
 }
