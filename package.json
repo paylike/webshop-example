@@ -19,7 +19,7 @@
 		"build:script:dev": "browserify -d -g envify ./ > ./dist/index.js",
 		"watch:script": "watchify -v -d -g envify ./ -o ./dist/index.js",
 
-		"serve": "http-server -p 80 ./dist",
+		"serve": "http-server ./dist",
 		"serve:dev": "http-server -p 8000 ./dist",
 
 		"dev": "parallelshell 'npm run watch' 'npm run serve:dev'",
