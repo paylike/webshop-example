@@ -1,7 +1,7 @@
 doctype
 html
 	head
-		title Artistic Maps
+		title= name
 		link(rel="stylesheet", href="./index.css")
 	body
 		header
@@ -18,9 +18,9 @@ html
 			block main
 
 		footer
-			p Artistic Maps IVS, Kochsgade 34, 1, 5000 Odense C • +45 20 96 29 77 • CVR: 12345678
+			p= footer
 			p
-				a(href="mailto:info@artisticmaps.com", alt="Contact us by email") info@artisticmaps.com
+				a(href="mailto:#{email}", alt="Contact us by email")= email
 
 				| &nbsp;•&nbsp;
 

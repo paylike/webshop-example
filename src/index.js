@@ -2,11 +2,13 @@
 
 var Basket = require('./basket');
 var renderBasket = require('./basket-view');
+var configuration = require('../conf.json');
 
-var shopName = document.title;
-var key = 'e9f468a8-4b63-46a5-aaf3-0911312bae27';
-var locale = 'en';
-var currency = 'EUR';
+var shopName = configuration.name;
+var key = configuration['paylike-public-key'];
+var locale = configuration.locale;
+var currency = configuration.currency;
+var products = configuration.products;
 
 var paylike = global.Paylike(key);
 
@@ -39,28 +41,34 @@ function run( storage, $root ){
 
 	if ($products) {
 		Array.prototype.forEach.call($products, function( $li ){
-			var $name = $li.querySelector('h1');
-			var $price = $li.querySelector('p.price');
 			var $buy = $li.querySelector('a.buy');
-			var $sku = $li.querySelector('p.sku');
-			var $image = $li.querySelector('img');
 
-			if (!$name || !$price || !$buy)
+			if (!$buy)
 				return;
 
 			$buy.addEventListener('click', function( e ){
 				e.preventDefault();
+				e.stopPropagation();
+
+				var product = products[+$li.getAttribute('data-n')];
 
 				state.basket.add({
-					name: $name.textContent,
-					image: $image.src,
-					price: +$price.textContent.match(/[0-9]/g).join(''),
-					sku: $sku && $sku.textContent,
+					name: product.name,
+					image: product.image,
+					price: product.price,
+					sku: product.sku,
 					quantity: 1,
 				});
 
 				renderBasket($basket, state.basket, locale, currency, onIncrease, onCheckout);
 				save(storage, state);
+
+				$basket.classList.remove('closed');
+
+				if ($basket.scrollIntoViewIfNeeded)
+					$basket.scrollIntoViewIfNeeded({ behavior: 'smooth' });
+				else if ($basket.scrollIntoView)
+					$basket.scrollIntoView({ behavior: 'smooth' });
 			});
 		});
 	}

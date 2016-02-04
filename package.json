@@ -7,9 +7,9 @@
 		"build:dev": "npm run build:styles:dev & npm run build:script:dev & npm run build:markup:dev",
 		"watch": "parallelshell 'npm run watch:styles' 'npm run watch:script' 'npm run watch:markup'",
 
-		"build:markup": "jade --no-debug src/*.jade -o ./dist",
-		"build:markup:dev": "jade --pretty src/*.jade -o ./dist",
-		"watch:markup": "jade --pretty -w src/*.jade -o ./dist",
+		"build:markup": "jade -O ./conf.json --no-debug src/*.jade -o ./dist",
+		"build:markup:dev": "jade -O ./conf.json --pretty src/*.jade -o ./dist",
+		"watch:markup": "jade -O ./conf.json --pretty -w src/*.jade -o ./dist",
 
 		"build:styles": "stylus --compress --use autoprefixer-stylus ./src -o ./dist",
 		"build:styles:dev": "stylus --use autoprefixer-stylus -m ./src -o ./dist",
@@ -29,7 +29,6 @@
 		"transform": [ "brjade" ]
 	},
 	"dependencies": {
-		"amount-format": "^0.0.6",
 		"array-find": "^1.0.0",
 		"component-bind": "^1.0.0",
 		"jade": "^1.11.0"

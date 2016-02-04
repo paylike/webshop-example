@@ -2,52 +2,16 @@ extends ./partials/layout.jade
 
 block main
 	ul.products
-		li
-			div.img: img(src="/images/products/a.png")
-			div.content
-				div.text
-					h1 Fyn, Denmark
-					p.price EUR 1,899.00
-					p.sku DK-F-L
+		each product, n in products
+			li(data-n=n)
+				div.img: img(src=product.image)
 
-				a.buy(href="#", alt="Buy product") Buy now
+				div.content
+					div.text
+						h1= product.name
 
-		li
-			div.img: img(src="/images/products/a.png")
-			div.content
-				div.text
-					h1 Fyn, Denmark
-					p.price EUR 899.00
-					p.sku DK-F-S
+						p.sku= product.sku
 
-				a.buy(href="#", alt="Buy product") Buy now
+						p.price= product.priceFormatted
 
-		li
-			div.img: img(src="/images/products/a.png")
-			div.content
-				div.text
-					h1 Fyn, Denmark
-					p.price EUR 1,899.00
-					p.sku DK-F-D
-
-				a.buy(href="#", alt="Buy product") Buy now
-
-		li
-			div.img: img(src="/images/products/a.png")
-			div.content
-				div.text
-					h1 Fyn, Denmark
-					p.price EUR 1,899.00
-					p.sku DK-F-L
-
-				a.buy(href="#", alt="Buy product") Buy now
-
-		li
-			div.img: img(src="/images/products/a.png")
-			div.content
-				div.text
-					h1 Fyn, Denmark
-					p.price EUR 1,899.00
-					p.sku DK-F-N
-
-				a.buy(href="#", alt="Buy product") Buy now
+					a.buy(href="#", alt="Buy product") Buy now

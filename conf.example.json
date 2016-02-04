@@ -1,0 +1,38 @@
+{
+	"name": "Maps Mania",
+	"paylike-public-key": "e9f468a8-4b63-46a5-aaf3-0911312bae27",
+	"locale": "en",
+	"currency": "USD",
+	"amounts": {
+		"before": "$ ",
+		"after": "",
+		"decimal": ".",
+		"thousands": ",",
+		"fractions": 0
+	},
+	"products": [
+		{
+			"sku": "LND-1",
+			"name": "London",
+			"price": 26900,
+			"priceFormatted": "$ 269",
+			"image": "/images/products/a.png"
+		},
+		{
+			"name": "PRS",
+			"sku": "PRS-1",
+			"price": 19900,
+			"priceFormatted": "$ 199",
+			"image": "/images/products/a.png"
+		},
+		{
+			"name": "NYC",
+			"sku": "NY-1",
+			"price": 29900,
+			"priceFormatted": "$ 299",
+			"image": "/images/products/a.png"
+		}
+	],
+	"footer": "Maps Mania Ltd, 123 Street, 99999 London • +99 999 11 22 33 • VAT: 12345678",
+	"email": "info@example.com"
+}

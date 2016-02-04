@@ -1,8 +1,8 @@
 'use strict';
 
 var jade = require('jade');
-var formatAmount = require('amount-format');
 var bind = require('component-bind');
+var formatAmount = require('./format-amount');
 
 module.exports = render;
 
@@ -46,7 +46,8 @@ function renderBasketPopup( $basket, basket, locale, currency, onIncrease, onChe
 		$line.querySelector('img').setAttribute('src', line.image);
 		$line.querySelector('h1').textContent = line.name;
 		$line.querySelector('input.quantity').value = line.quantity;
-		$line.querySelector('p.amount').textContent = formatAmount(locale, line.price * line.quantity, currency);
+
+		$line.querySelector('p.amount').textContent = formatAmount(line.price * line.quantity);
 
 		listen($line.querySelector('button.less'), 'click', bind(null, onIncrease, line, -1));
 		listen($line.querySelector('button.more'), 'click', bind(null, onIncrease, line, 1));
@@ -57,7 +58,7 @@ function renderBasketPopup( $basket, basket, locale, currency, onIncrease, onChe
 
 	replaceNode($popup.querySelector('ul.lines'), $lines);
 
-	$popup.querySelector('div.summary p.amount').textContent = formatAmount(locale, basket.total(), currency);
+	$popup.querySelector('div.summary p.amount').textContent = formatAmount(basket.total());
 
 	listen($popup.querySelector('button.checkout'), 'click', onCheckout);
 
