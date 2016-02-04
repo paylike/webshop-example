@@ -37,7 +37,7 @@ Open http://127.0.0.1:8000 in your browser.
 ## Deploy to static host (e.g. Amazon S3)
 
 ```
-npm run build
+PAYLIKE_KEY=your-public-key npm run build
 ```
 
 Copy the content of the `/dist` folder to your web server (e.g. an Amazon
