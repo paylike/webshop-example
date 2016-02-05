@@ -4,6 +4,7 @@
 	"locale": "en",
 	"currency": "USD",
 	"[logo]": "/images/logo.svg",
+	"[googleAnalytics]": "UA-00000000-00",
 	"amounts": {
 		"before": "$ ",
 		"after": "",

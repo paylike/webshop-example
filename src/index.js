@@ -1,6 +1,7 @@
 'use strict';
 
 var Basket = require('./basket');
+var ga = require('./ga');
 var renderBasket = require('./basket-view');
 var configuration = require('../conf.json');
 
@@ -10,12 +11,18 @@ var locale = configuration.locale;
 var currency = configuration.currency;
 var checkoutFields = configuration['checkout-fields'];
 var products = configuration.products;
+var trackingId = configuration.googleAnalytics;
 
 var paylike = global.Paylike(key);
 
 run(window.localStorage, window.document.documentElement);
 
 function run( storage, $root ){
+	if (trackingId) {
+		ga('create', trackingId, 'auto');
+		ga('send', 'pageview');
+	}
+
 	var state = load(storage);
 
 	var $basket = $root.querySelector('div.basket');
@@ -70,6 +77,8 @@ function run( storage, $root ){
 					$basket.scrollIntoViewIfNeeded({ behavior: 'smooth' });
 				else if ($basket.scrollIntoView)
 					$basket.scrollIntoView({ behavior: 'smooth' });
+
+				track('basket', 'add');
 			});
 		});
 	}
@@ -78,6 +87,7 @@ function run( storage, $root ){
 		state.basket.increase(line, quantity);
 		renderBasket($basket, state.basket, locale, currency, onIncrease, onCheckout);
 		save(storage, state);
+		track('basket', quantity > 0 ? 'increase' : 'decrease');
 	}
 
 	function onCheckout(){
@@ -93,8 +103,11 @@ function run( storage, $root ){
 
 			fields: checkoutFields,
 		}, function( err ){
-			if (err)
+			if (err){
+				track('checkout', 'close');
+
 				return;
+			}
 
 			state.basket.empty();
 			renderBasket($basket, state.basket, locale, currency, onIncrease, onCheckout);
@@ -102,7 +115,14 @@ function run( storage, $root ){
 
 			window.location = '/thanks.html';
 		});
+
+		track('checkout', 'open');
 	}
+}
+
+function track( category, action ){
+	if (trackingId)
+		ga('send', 'event', category, action);
 }
 
 function save( storage, state ){
