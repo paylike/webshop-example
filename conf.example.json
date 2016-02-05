@@ -13,21 +13,21 @@
 	},
 	"products": [
 		{
-			"sku": "LND-1",
 			"name": "London",
+			"sku": "LND-1",
 			"price": 26900,
 			"priceFormatted": "$ 269",
 			"image": "/images/products/a.png"
 		},
 		{
-			"name": "PRS",
+			"name": "Paris",
 			"sku": "PRS-1",
 			"price": 19900,
 			"priceFormatted": "$ 199",
 			"image": "/images/products/a.png"
 		},
 		{
-			"name": "NYC",
+			"name": "New York",
 			"sku": "NY-1",
 			"price": 29900,
 			"priceFormatted": "$ 299",
@@ -38,28 +38,28 @@
 		{
 			"name": "E-mail",
 			"placeholder": "example@domain.com",
-			"required": true,
+			"required": true
 		},
 		{
 			"name": "Name",
 			"placeholder": "Enter your full name",
-			"required": true,
+			"required": true
 		},
 		{
 			"name": "Address",
 			"placeholder": "Street, no., floor, apt.",
-			"required": true,
+			"required": true
 		},
 		{
 			"name": "ZIP and city",
 			"placeholder": "0000 City name",
-			"required": true,
+			"required": true
 		},
 		{
 			"name": "Country",
 			"placeholder": "Enter country",
-			"required": true,
-		},
+			"required": true
+		}
 	],
 	"footer": "Mostly Maps Ltd, 123 Street, 99999 London • +99 999 11 22 33 • VAT: 12345678",
 	"email": "info@example.com"
