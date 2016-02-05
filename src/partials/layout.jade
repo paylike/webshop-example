@@ -6,7 +6,10 @@ html
 	body
 		header
 			a.logo(href="/")
-				img(src="/images/logo.svg")
+				if logo
+					img(src=logo)
+				else
+					= name
 
 			div.basket.empty.closed
 				a(href="#", alt="Basket") Basket

@@ -3,6 +3,7 @@
 	"paylike-public-key": "e9f468a8-4b63-46a5-aaf3-0911312bae27",
 	"locale": "en",
 	"currency": "USD",
+	"[logo]": "/images/logo.svg",
 	"amounts": {
 		"before": "$ ",
 		"after": "",
