@@ -1,5 +1,5 @@
 {
-	"name": "Maps Mania",
+	"name": "Mostly Maps",
 	"paylike-public-key": "e9f468a8-4b63-46a5-aaf3-0911312bae27",
 	"locale": "en",
 	"currency": "USD",
@@ -60,6 +60,6 @@
 			"required": true,
 		},
 	],
-	"footer": "Maps Mania Ltd, 123 Street, 99999 London • +99 999 11 22 33 • VAT: 12345678",
+	"footer": "Mostly Maps Ltd, 123 Street, 99999 London • +99 999 11 22 33 • VAT: 12345678",
 	"email": "info@example.com"
 }
