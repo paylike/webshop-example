@@ -149,22 +149,6 @@ main
 
 		text-align left
 
-		// tune these values to fit your products
-
-		grid(2, 1em)
-
-		@media all and (min-width 40em)
-			grid(2, 1.5em)
-
-		// If you only have two products you can remove these media-
-		// queries to have them take up the full width
-
-		@media all and (min-width 50em)
-			grid(3, 1em)
-
-		@media all and (min-width 60em)
-			grid(3, 1.25em)
-
 		li
 			overflow hidden
 			border-radius 3px
@@ -232,6 +216,22 @@ main
 				flex-flow row nowrap
 				justify-content space-between
 				align-items stretch
+
+	ul.products
+		grid(1, 1em)
+
+	ul.products[gt1]
+		grid(2, 1em)
+
+		@media all and (min-width 40em)
+			grid(2, 1.5em)
+
+	ul.products[gt2]
+		@media all and (min-width 50em)
+			grid(3, 1em)
+
+		@media all and (min-width 60em)
+			grid(3, 1.25em)
 
 footer
 	margin-bottom 2.8em

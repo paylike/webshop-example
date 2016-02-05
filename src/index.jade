@@ -1,7 +1,8 @@
 extends ./partials/layout.jade
 
 block main
-	ul.products
+
+	ul.products(gt2=products.length > 2, gt1=products.length > 1)
 		each product, n in products
 			li(data-n=n)
 				div.img: img(src=product.image)
