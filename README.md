@@ -40,7 +40,7 @@ Open http://127.0.0.1:8000 in your browser.
 Adjust `conf.json` (see `conf.example.json`).
 
 ```
-PAYLIKE_KEY=your-public-key npm run build
+npm run build
 ```
 
 Copy the content of the `/dist` folder to your web server (e.g. an Amazon
