@@ -33,6 +33,33 @@
 			"image": "/images/products/a.png"
 		}
 	],
+	"checkout-fields": [
+		{
+			"name": "E-mail",
+			"placeholder": "example@domain.com",
+			"required": true,
+		},
+		{
+			"name": "Name",
+			"placeholder": "Enter your full name",
+			"required": true,
+		},
+		{
+			"name": "Address",
+			"placeholder": "Street, no., floor, apt.",
+			"required": true,
+		},
+		{
+			"name": "ZIP and city",
+			"placeholder": "0000 City name",
+			"required": true,
+		},
+		{
+			"name": "Country",
+			"placeholder": "Enter country",
+			"required": true,
+		},
+	],
 	"footer": "Maps Mania Ltd, 123 Street, 99999 London • +99 999 11 22 33 • VAT: 12345678",
 	"email": "info@example.com"
 }

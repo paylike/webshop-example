@@ -8,6 +8,7 @@ var shopName = configuration.name;
 var key = configuration['paylike-public-key'];
 var locale = configuration.locale;
 var currency = configuration.currency;
+var checkoutFields = configuration['checkout-fields'];
 var products = configuration.products;
 
 var paylike = global.Paylike(key);
@@ -90,33 +91,7 @@ function run( storage, $root ){
 
 			custom: state.basket.toJSON(),
 
-			fields: [
-				{
-					name: 'E-mail',
-					placeholder: 'example@domain.com',
-					required: true,
-				},
-				{
-					name: 'Name',
-					placeholder: 'Enter your full name',
-					required: true,
-				},
-				{
-					name: 'Address',
-					placeholder: 'Street, no., floor, apt.',
-					required: true,
-				},
-				{
-					name: 'ZIP and city',
-					placeholder: '0000 City name',
-					required: true,
-				},
-				{
-					name: 'Country',
-					placeholder: 'Enter country',
-					required: true,
-				},
-			],
+			fields: checkoutFields,
 		}, function( err ){
 			if (err)
 				return;
