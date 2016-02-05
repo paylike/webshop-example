@@ -24,6 +24,7 @@ Prerequisites:
 git clone git@github.com:paylike/webshop-example.git
 cd webshop-example
 npm install
+cp conf.example.json conf.json
 ```
 
 ## Develop
@@ -35,6 +36,8 @@ npm run dev
 Open http://127.0.0.1:8000 in your browser.
 
 ## Deploy to static host (e.g. Amazon S3)
+
+Adjust `conf.json` (see `conf.example.json`).
 
 ```
 PAYLIKE_KEY=your-public-key npm run build
@@ -48,6 +51,8 @@ need a configuration file along the lines of
 [nginx.sample.conf](nginx.sample.conf).
 
 ## Deploy server
+
+Adjust `conf.json` (see `conf.example.json`).
 
 With [Heroku](https://www.heroku.com) and similar services, this should work
 out-of-the-box by pushing this repository.
