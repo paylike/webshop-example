@@ -11,7 +11,7 @@ var locale = configuration.locale;
 var currency = configuration.currency;
 var checkoutFields = configuration['checkout-fields'];
 var products = configuration.products;
-var trackingId = configuration.googleAnalytics;
+var trackingId = configuration['google-analytics'];
 
 var paylike = global.Paylike(key);
 

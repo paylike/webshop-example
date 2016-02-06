@@ -32,6 +32,7 @@
 		"array-find": "^1.0.0",
 		"component-bind": "^1.0.0",
 		"jade": "^1.11.0",
+		"add-script": "^1.0.1",
 
 		"autoprefixer-stylus": "*",
 		"brjade": "^0.0.4",
