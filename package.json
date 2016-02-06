@@ -3,8 +3,8 @@
 	"private": true,
 	"main": "./src",
 	"scripts": {
-		"build": "npm run build:styles & npm run build:script & npm run build:markup",
-		"build:dev": "npm run build:styles:dev & npm run build:script:dev & npm run build:markup:dev",
+		"build": "parallelshell 'npm run build:styles' 'npm run build:script' 'npm run build:markup'",
+		"build:dev": "parallelshell 'npm run build:styles:dev' 'npm run build:script:dev' 'npm run build:markup:dev'",
 		"watch": "parallelshell 'npm run watch:styles' 'npm run watch:script' 'npm run watch:markup'",
 
 		"build:markup": "jade -O ./conf.json --no-debug src/*.jade -o ./dist",
