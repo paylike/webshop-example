@@ -18,21 +18,21 @@
 			"sku": "LND-1",
 			"price": 26900,
 			"priceFormatted": "$ 269",
-			"image": "/images/products/a.png"
+			"image": "images/products/a.png"
 		},
 		{
 			"name": "Paris",
 			"sku": "PRS-1",
 			"price": 19900,
 			"priceFormatted": "$ 199",
-			"image": "/images/products/a.png"
+			"image": "images/products/a.png"
 		},
 		{
 			"name": "New York",
 			"sku": "NY-1",
 			"price": 29900,
 			"priceFormatted": "$ 299",
-			"image": "/images/products/a.png"
+			"image": "images/products/a.png"
 		}
 	],
 	"checkout-fields": [
