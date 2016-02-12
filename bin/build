@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+var spawn = require('child_process').spawn;
+
+spawn('npm', ['install'], {
+	cwd: __dirname,
+	stdio: 'inherit',
+})
+	.on('close', function(){
+		return spawn('npm', ['build'], {
+			cwd: __dirname,
+			stdio: 'inherit',
+		});
+	});
