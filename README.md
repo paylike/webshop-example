@@ -20,6 +20,12 @@ Prerequisites:
 - SSL/TLS certificate (https) for secure access (any website should, especially ecommerce)
 - [A merchant account at Paylike (free)](https://app.paylike.io)
 
+## Features
+
+- Responsive design
+- Any currency
+- Google Analytics integration (optional)
+
 ## Install
 
 ```
