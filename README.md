@@ -11,8 +11,6 @@ with minimal or no costs at all.
 Instead of its own backend, the webshop relies on the [Paylike
 dashboard](https://app.paylike.io) for handling transactions.
 
-**Demo:** https://billigpoker.dk
-
 Prerequisites:
 
 - [Node.js](https://nodejs.org/en/download/) for development and building
